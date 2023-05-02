@@ -1,0 +1,168 @@
+{
+  "airplanes": [
+    {
+      "brand": "Boeing",
+      "model": "747-400",
+      "price": 150,
+      "weight": 396890,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/British_Airways_G-BNLU-2008-09-13-YVR.jpg",
+      "num_passengers": 660,
+      "range": 13430,
+      "type": "transport"
+    },
+    {
+      "brand": "Airbus",
+      "model": "A320",
+      "price": 100,
+      "weight": 73500,
+      "image_url": "https://www.airbus.com/sites/g/files/jlcbta136/files/styles/airbus_608x608/public/2022-06/RENDER%20-%20A321%20-%20XLR%20-%20fix%2014.jpg?itok=gNCVpPXd",
+      "num_passengers": 180,
+      "range": 6200,
+      "type": "transport"
+    },
+    {
+      "brand": "Bombardier",
+      "model": "CRJ900",
+      "price": 46,
+      "weight": 37485,
+      "image_url": "https://www.aerospace-technology.com/wp-content/uploads/sites/15/2019/05/3.jpg",
+      "num_passengers": 90,
+      "range": 2800,
+      "type": "transport"
+    },
+    {
+      "brand": "Embraer",
+      "model": "E190-E2",
+      "price": 60,
+      "weight": 56830,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wider%C3%B8e%2C_LN-WEA%2C_Embraer_E190-E2_%40_HEL.jpg/1200px-Wider%C3%B8e%2C_LN-WEA%2C_Embraer_E190-E2_%40_HEL.jpg",
+      "num_passengers": 114,
+      "range": 4100,
+      "type": "transport"
+    },
+    {
+      "brand": "Boeing",
+      "model": "777-200LR",
+      "price": 306,
+      "weight": 351530,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Emirates_Boeing_777-200LR_A6-EWJ_%288268969066%29.jpg",
+      "num_passengers": 317,
+      "range": 9425,
+      "type": "transport"
+    },
+    {
+      "brand": "Airbus",
+      "model": "A330-200",
+      "price": 245,
+      "weight": 233000,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Turkish_Airlines%2C_Airbus_A330-300_TC-JNL_NRT_%2823708073592%29.jpg",
+      "num_passengers": 253,
+      "range": 7400,
+      "type": "transport"
+    },
+    {
+      "brand": "Boeing",
+      "model": "737-800",
+      "price": 106,
+      "weight": 79750,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Delta_Air_Lines_Boeing_737-832%3B_N3747D%40LAX%3B10.10.2011_622in_%286482376485%29.jpg",
+      "num_passengers": 189,
+      "range": 3000,
+      "type": "transport"
+    },
+    {
+      "brand": "Airbus",
+      "model": "A220-300",
+      "price": 88,
+      "weight": 65400,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Airbus_A220-300.jpg",
+      "num_passengers": 160,
+      "range": 6200,
+      "type": "transport"
+    },
+    {
+      "brand": "Embraer",
+      "model": "ERJ145",
+      "price": 20,
+      "weight": 22453,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Flybe_erj145_g-erja_arp.jpg/1200px-Flybe_erj145_g-erja_arp.jpg",
+      "num_passengers": 50,
+      "range": 1530,
+      "type": "transport"
+    },
+    {
+      "brand": "Cessna",
+      "model": "Citation Longitude",
+      "price": 261,
+      "weight": 17500,
+      "image_url": "https://www.libertyjet.com/img/aircraft/Citation-Longitude.png",
+      "num_passengers": 12,
+      "range": 3500,
+      "type": "transport"
+    },
+    {
+      "brand": "Gulfstream",
+      "model": "G550",
+      "price": 62,
+      "weight": 89250,
+      "image_url": "https://i0.wp.com/privatejetcardcomparisons.com/wp-content/uploads/2021/03/Gulfstream-G550-pric1e.jpg?fit=1920%2C909&ssl=1",
+      "num_passengers": 19,
+      "range": 6750,
+      "type": "transport"
+    },
+    {
+      "brand": "Bombardier",
+      "model": "Global 7500",
+      "price": 74,
+      "weight": 106764,
+      "image_url": "https://www.jetcraft.com/wp-content/uploads/2019/04/7500-Header.jpg",
+      "num_passengers": 19,
+      "range": 7700,
+      "type": "transport"
+    },
+    {
+      "brand": "Lockheed Martin",
+      "model": "F-35 Lightning II",
+      "price": 95,
+      "weight": 68000,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/F-35A_flight_%28cropped%29.jpg",
+      "num_passengers": 1,
+      "range": 2200,
+      "role": "Multirole fighter",
+      "type": "military"
+    },
+    {
+      "brand": "Boeing",
+      "model": "F-15EX",
+      "price": 95,
+      "weight": 68000,
+      "image_url": "https://www.armyweb.cz/cache/images/full/4399/4399--f15ex-tit.jpg",
+      "num_passengers": 1,
+      "range": 2100,
+      "role": "Air superiority fighter",
+      "type": "military"
+    },
+    {
+      "brand": "Northrop Grumman",
+      "model": "B-2 Spirit",
+      "price": 2400,
+      "weight": 376000,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/B-2_Spirit_%28cropped%29.jpg",
+      "num_passengers": 2,
+      "range": 6000,
+      "role": "Strategic stealth bomber",
+      "type": "military"
+    },
+    {
+      "brand": "Boeing",
+      "model": "KC-46 Pegasus",
+      "price": 241,
+      "weight": 146000,
+      "image_url": "https://www.thedrive.com/uploads/2022/08/26/KC46-White.jpg?auto=webp&crop=16%3A9&auto=webp&optimize=high&quality=70&width=1440",
+      "num_passengers": 114,
+      "range": 6200,
+      "role": "Air refueling and strategic transport",
+      "type": "military"
+    }
+  ]
+}

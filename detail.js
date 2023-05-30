@@ -10,7 +10,6 @@ async function loadProductDetail() {
     if (!product) {
         window.location.href = "/index.html";
     }
-    console.log(product);
     const replaced = replace(cnt.innerHTML, product);
     cnt.innerHTML = replaced;
     cnt.style.display = "block";

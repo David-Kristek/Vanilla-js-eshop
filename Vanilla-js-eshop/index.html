@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/drone-icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Airplanes eshop</title>
+  <script src="/utils/templates.js"></script>
+  <script src="/utils/cart.js"></script>
+  <script src="/index.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/drone-icon.png" alt="drone-icon" />
+      <h1>Airplanes eshop</h1>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  <section id="shop" class="container">
+    <div class="top">
+      <input type="text" placeholder="Search" class="search-input" id="search" />
+      <div class="cart-icon-container" data-count="0">
+        <img src="assets/shopping-cart.png" alt="" />
+        <div class="cart-container"></div>
+      </div>
+    </div>
+    <div class="filters">
+      <h2>Filters</h2>
+      <div class="price-inputs">
+        <label for="min-price">Min Price:</label>
+        <input type="number" id="min-price" min="0" max="100" step="1">
+
+        <label for="max-price">Max Price:</label>
+        <input type="number" id="max-price" min="0" max="100" step="1">
+      </div>
+    </div>
+    <div class="content"></div>
+  </section>
+</body>
+
+</html>

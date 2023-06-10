@@ -63,7 +63,6 @@ ul {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: auto 1fr;
-
 }
 
 .filters {
@@ -72,7 +71,6 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .price-inputs {
@@ -242,4 +240,15 @@ input {
 
 .contentWithVariables {
   display: none;
+}
+
+.checkout {
+  width: 80%;
+  margin: auto;
+}
+.checkout-item {
+}
+.checkout-item img {
+  max-width: 40%;
+  object-fit: cover;
 }

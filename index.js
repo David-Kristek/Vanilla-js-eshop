@@ -1,7 +1,7 @@
 class Products {
   products = [];
   productsContainerElement = null;
-  productTemplate = () => { };
+  productTemplate = () => {};
   constructor(productTemplate, productsContainerElement) {
     this.productTemplate = productTemplate;
     this.productsContainerElement = productsContainerElement;
@@ -14,68 +14,78 @@ class Products {
     this.displayProducts(products);
   }
   displayProducts(products) {
-    this.productsContainerElement.innerHTML = templateArray(products, this.productTemplate);
+    this.productsContainerElement.innerHTML = templateArray(
+      products,
+      this.productTemplate
+    );
   }
 }
-const products = new Products(productTemplate, document.querySelector(".content"));
 
+class filteredProducts extends Products {
+  filteredProducts = [];
+  priceFilter = {};
+  searchFilter = "";
+  constructor(productTemplate, productsContainerElement) {
+    super(productTemplate, productsContainerElement);
+  }
+
+  filterProductsByPrice({ minPrice, maxPrice }) {
+    this.priceFilter = {
+      min: minPrice ?? this.priceFilter.min,
+      max: maxPrice ?? this.priceFilter.max,
+    };
+    this.runFilters();
+  }
+  filterProductsByName(name) {
+    this.searchFilter = name;
+    this.runFilters();
+  }
+  runFilters() {
+    this.filteredProducts = this.products.filter((product) => {
+      const priceFiltered =
+        (!this.priceFilter.min || product.price >= this.priceFilter.min) &&
+        (!this.priceFilter.max || product.price <= this.priceFilter.max);
+
+      const productName = `${product.brand} ${product.model}`;
+      const nameFiltered = productName
+        .toLowerCase()
+        .includes(this.searchFilter.toLowerCase());
+      return priceFiltered && nameFiltered;
+    });
+    console.log("displaying new");
+    this.displayProducts(this.filteredProducts);
+  }
+}
+
+const products = new filteredProducts(
+  productTemplate,
+  document.querySelector(".content")
+);
 
 window.addEventListener("load", async () => {
   const fetchProducts = await fetch("/assets/products.json");
   const data = await fetchProducts.json();
-
   products.setProducts(data.airplanes);
 });
 
+document.getElementById("search").addEventListener("keyup", (event) => {
+  products.filterProductsByName(event.target.value);
+});
 
+const maxPriceElement = document.getElementById("max-price");
+const minPriceElement = document.getElementById("min-price");
 
+maxPriceElement.addEventListener("keyup", (event) => {
+  products.filterProductsByPrice({ maxPrice: event.target.value });
+});
+minPriceElement.addEventListener("keyup", (event) => {
+  products.filterProductsByPrice({ minPrice: event.target.value });
+});
+
+//  Kosik
 const cartContainerElement = document.querySelector(".cart-container");
 const cartIcon = document.querySelector(".cart-icon-container");
+const cart = new Cart(cartIcon, cartContainerElement);
 
-cartOjbect.init(cartContainerElement, cartIcon);
-const onCartItemAdd = cartOjbect.onCartItemAdd.bind(cartOjbect);
-const onCartItemCountChange = cartOjbect.onCartItemCountChange.bind(cartOjbect);
-
-let searchValue = "";
-
-document.getElementById("search").addEventListener("keyup", (event) => {
-  searchValue = event.target.value;
-  filterProducts();
-});
-
-
-function filterProducts() {
-  console.log(searchValue, "searchValue", minPriceValue, "minPriceValue", maxPriceValue, "maxPriceValue");
-  const filteredProductsNames = products.getProucts().filter((product) => {
-    const productName = `${product.model} ${product.model} ${product.brand}`;
-    return productName.toLowerCase().includes(searchValue.toLowerCase());
-  });
-  const filteredProducts = filteredProductsNames.filter((product) => {
-    return product.price >= minPriceValue && product.price <= maxPriceValue;
-  });
-  console.log(filteredProducts, "filteredProducts");
-  products.displayProducts(filteredProducts);
-}
-
-
-function templateArray(array, template) {
-  return array.reduce((html, item) => {
-    return html + template(item);
-  }, "");
-}
-
-const maxPrice = document.getElementById("max-price");
-const minPrice = document.getElementById("min-price");
-
-
-let maxPriceValue = 0;
-let minPriceValue = 0;
-
-maxPrice.addEventListener("change", (event) => {
-  maxPriceValue = event.target.value;
-  filterProducts();
-});
-minPrice.addEventListener("change", (event) => {
-  minPriceValue = event.target.value;
-  filterProducts();
-})
+const onCartItemAdd = cart.onCartItemAdd.bind(cart);
+const onCartItemCountChange = cart.onCartItemCountChange.bind(cart);

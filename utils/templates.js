@@ -6,7 +6,7 @@ function productTemplate(product) {
       <h2 class="item-name">${product.brand} ${product.model}</h2>
     </a>
     <p class="item-price">$${product.price}M</p>
-    <button class="btn add-to-cart" onclick="onCartItemAdd('${product.brand} ${product.model}', ${product.price})">Add to Cart</button>
+    <button class="btn add-to-cart" onclick="onCartItemAdd('${product.brand} ${product.model}', ${product.price}, '${product.image_url}')">Add to Cart</button>
     </div>
     `;
 }
@@ -27,14 +27,47 @@ function emptyCartTemplate() {
       <p>Your shopping cart is empty</p>
     `;
 }
-function cartFooterTemplate() {
+function cartFooterTemplate(totalPrice) {
   return `
-    <div class="cart-item">
-      <hr />
-      <p class="item-name">Total</p>
-      <div class="item-right">
-        <p class="item-total-price"></p>
+    <div> 
+      <div class="cart-item">
+        <hr />
+        <p class="item-name">Total</p>
+        <div class="item-right">
+          <p class="item-total-price">${totalPrice}M</p>
+        </div>
       </div>
+      <a href="/checkout.html" style="text-align:end;display:block;">Checkout</a>
     </div>
     `;
+}
+
+function checkoutTemplate(cartItems, totalPrice) {
+  return `
+    <div class="checkout">
+      <h1>Checkout</h1>
+      ${templateArray(cartItems, checkoutItemTemplate)}
+      <div>Total: ${totalPrice}M</div>
+      <buttton class="btn">Pay now</button>
+    </div>
+    
+    `;
+}
+
+function checkoutItemTemplate(cartItem) {
+  return `
+    <div class="checkout-item">
+      <img src=${cartItem.imageUrl} alt=${cartItem.name} />
+      <h4>${cartItem.name}</h4>
+      <p>Price: ${cartItem.price}M</p>
+      <p>Count: ${cartItem.count}</p>
+      <hr>
+    </div>
+    `;
+}
+
+function templateArray(array, template) {
+  return array.reduce((html, item) => {
+    return html + template(item);
+  }, "");
 }
